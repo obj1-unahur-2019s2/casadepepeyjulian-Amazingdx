@@ -88,11 +88,20 @@ object packComida
 	//plato -> lista de comidas y 1 aderezo (salsaTomate o cebollas)
 	//precio = la suma de los precios de todos los componentes
 	
-	method precio() { return 1200 }
+	var plato
+	var aderezo
 	
-	//TODO
-	method esComida() { return false }
-	method esElectrodomestico() { return true }	
+	method plato()   {return plato}
+	method aderezo() {return aderezo}
+	method configurar(unPlato, unAderezo)
+	{
+		plato = unPlato
+		aderezo = unAderezo
+	}
+	
+	method precio() { return plato.precio() + aderezo.precio() }
+	method esComida() { return true }
+	method esElectrodomestico() { return false }	
 }
 
 object packRegalo 
